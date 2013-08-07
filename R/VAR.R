@@ -86,6 +86,7 @@ function (y, p = 1, type = c("const", "trend", "both", "none"),
     }
   call <- match.call()
   if("season" %in% names(call)) call$season <- eval(season)
+  if("exogen" %in% names(call)) call$exogen <- eval(exogen)
     result <- list(varresult = equation, datamat = data.frame(cbind(yend, 
         rhs)), y = y.orig, type = type, p = p, K = K, obs = sample, 
         totobs = sample + p, restrictions = NULL, call = call)
